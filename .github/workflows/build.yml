@@ -447,6 +447,7 @@ jobs:
             "$GAME_DIR" \
             -k "$WORK/prod.keys" \
             -o "$OUTPUT"
+            --allow-other-metal
 
           if [[ ! -s "$OUTPUT" ]]; then
             echo "::error::IPA build did not produce an output file."
