@@ -120,7 +120,7 @@ jobs:
           )"
 
             echo "Downloading $(basename "$output")..."
-            gdown --id "$file_id" -O "$output" --fuzzy
+            gdown "$file_id" -O "$output"
 
             if [[ ! -s "$output" ]]; then
               echo "::error::Downloaded file is empty."
