@@ -40,10 +40,6 @@ jobs:
         with:
           repository: seedds/nxnative
           ref: main
-      - name: Select Xcode 26.6
-        uses: maxim-lobanov/setup-xcode@v1
-        with:
-          xcode-version: '26.6'
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -436,6 +432,7 @@ jobs:
             exit 1
           fi
 
+          python "$CHAIN_SCRIPT" --update-lock
           python "$CHAIN_SCRIPT" --header
 
       - name: Build unsigned IPA
